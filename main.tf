@@ -39,6 +39,13 @@ resource "azurerm_public_ip" "pip" {
   domain_name_label = "bookdevops"
 } 
 
+resource "azurerm_storage_account" "stor" {
+  name = "bookstor"
+  location = "West Europe"
+  resource_group_name = azurerm_resource_group.rg.name
+  account_tier = "Standard"
+  account_replication = "LRS"
+}
 
 
 
